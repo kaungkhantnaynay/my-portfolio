@@ -30,16 +30,16 @@ export default function Experience() {
 
     return(
         <section className='py-20 text-center'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6'>
+            <div className='max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {experiences.map((exp,index)=>(
-                    <div key={index} className='rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-6 text-left'>
-                        <h3 className='text-2xl font-semibold text-green-700'>{exp.role}</h3>
+                    <div key={index} className='rounded-2xl shadow-md hover:shadow-xl transition-shadow p-6 text-left'>
+                        <h3 className='text-2xl md:text-2xl font-semibold text-green-700'>{exp.role}</h3>
                         <div className='flex items-center space-x-2 mt-1'>
                             {exp.logo}
-                            <p className='font-medium'>{exp.company}</p>
+                            <p className='font-medium text-sm md:text-base'>{exp.company}</p>
                         </div>
-                        <p className='text-sm mt-1 italic'>{exp.period}</p>
-                        <p className='mt-4'>{exp.description}</p>
+                        <p className='text-sm md:text-sm mt-1 italic'>{exp.period}</p>
+                        <p className='mt-4 text-sm md:text-base leading-relaxed'>{exp.description}</p>
                     </div>
                 ))}
             </div>

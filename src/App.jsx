@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import WaveText from './WaveText.jsx'
 import Experience from './Experience.jsx'
 import SkillsTools from './SkillsTools.jsx'
@@ -8,13 +8,33 @@ import profile from './assets/Profile-Pic.jpg'
 
 
 const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div>
-      <nav className="bg-black text-white py-4 px-8 flex items-center justify-between">
+      <nav className="bg-black text-white py-4 px-8 flex items-center justify-between fixed top-0 w-full z-50">
         <div className="text-xl font-bold">
           <span className="text-green-600">Kaung</span> Khant
         </div>
-        <ul className="flex space-x-8">
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'}
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <ul className={`md:flex space-x-8 ${isMenuOpen ? 'absolute top-16 left-0 w-full bg-black flex flex-col items-center space-y-4 py-4' : 'hidden'}`}>
           <li>
             <a href="#portfolio" className="text-green-600 underline underline-offset-4">
               Portfolio
@@ -38,15 +58,15 @@ const App = () => {
         </ul>
         <a
           href="#contact"
-          className="bg-white text-black font-semibold py-2 px-5 rounded-full shadow hover:scale-105 transition-transform"
+          className="bg-white text-black font-semibold py-2 px-5 rounded-full shadow hover:scale-105 transition-transform hidden md:block"
         >
           Contact Me
         </a>
       </nav>
 
-      <section className='flex flex-col items-center justify-center text-center py-24'>
+      <section id='portfolio' className='flex flex-col items-center justify-center text-center py-24'>
         <div>
-          <p className='text-3xl font-bold text-black'>Hello</p>
+          <p className='text-3xl sm:text-3xl md:text-4xl font-bold text-black'>Hello</p>
           <WaveText/>
         </div>
         <div>
@@ -58,32 +78,34 @@ const App = () => {
         </div>
       </section>
 
-      <section>
+      <section id='experience'>
         <div>
-          <h1 className='flex flex-col items-center justify-center text-center text-2xl font-bold text-black'>Work Experiences</h1>
+          <h1 className='flex flex-col items-center justify-center text-center text-xl sm:text-2xl font-bold text-black'>Work Experiences</h1>
           <Experience/>
         </div>
       </section>
           
-      <section>
+      <section id='skills-tools'>
           <SkillsTools/>
+      </section>
+      <section id='projects'>
           <Projects/>
       </section>
 
-      <section className="bg-[#F2EEA7] py-16 px-8">
+      <section id="about" className="bg-[#F2EEA7] py-16 px-8">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
         <div className="flex-shrink-0">
           <img
             src={profile}
             alt="Profile"
-            className="w-60 h-70 rounded-full"
+            className="w-40 h-50 sm:w-60 sm:h-70 rounded-full"
           />
         </div>
 
         <div className="text-center md:text-left max-w-3xl">
-          <h2 className="text-3xl font-bold text-black mb-4">About Me</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4">About Me</h2>
 
-          <p className="text-2xl font-semibold text-orange-500 mb-6">
+          <p className="text-xl sm:text-2xl font-semibold text-orange-500 mb-6">
             "An aspiring web developer determined to master my craft."
           </p>
 
@@ -102,7 +124,9 @@ const App = () => {
         </div>
       </div>
       </section>
-      <Footer />
+      <section id="contact">
+        <Footer />
+      </section>
     </div>
   )
 }

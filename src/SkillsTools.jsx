@@ -62,13 +62,13 @@ export default function SkillsTools() {
           <h2 className="text-3xl font-bold mb-6 pl-3">
             Tools & Technologies
           </h2>
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
             {tools.map((tool, index) => (
               <div
                 key={index}
                 className="flex flex-col justify-center items-center border border-green-700 rounded-md p-4 hover:scale-110 transition-transform duration-300"
               >
-                <div className="text-3xl mb-2">{tool.icon}</div>
+                <div className="text-2xl md:text-3xl mb-2">{tool.icon}</div>
                 <p className="text-xs">{tool.name}</p>
               </div>
             ))}
