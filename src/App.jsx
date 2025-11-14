@@ -1,4 +1,11 @@
 import React from 'react'
+import WaveText from './WaveText.jsx'
+import Experience from './Experience.jsx'
+import SkillsTools from './SkillsTools.jsx'
+import Projects from './Projects.jsx'
+import Footer from './Footer.jsx'
+import profile from './assets/Profile-Pic.jpg'
+
 
 const App = () => {
   return (
@@ -40,16 +47,62 @@ const App = () => {
       <section className='flex flex-col items-center justify-center text-center py-24'>
         <div>
           <p className='text-3xl font-bold text-black'>Hello</p>
-          <h2 className='text-5xl font-extrabold text-green-700 mt-4 leading-tight'>I'm Kaung Khant Nay <br />a Full Stack Web Developer</h2>
+          <WaveText/>
         </div>
         <div>
-          <p className='mt-6 max-w-2xl text-2xl text-gray-800 italic'>“Former Network & Data Center Engineer turned Full Stack Web Developer, passionate about building dynamic and user-friendly web applications.”</p>
+          <p className='mt-6 max-w-2xl text-2xl/relaxed text-gray-800 italic'>“Former Network & Data Center Engineer turned Full Stack Web Developer, passionate about building dynamic and user-friendly web applications.”</p>
           <a href="#projects"
-          className="mt-8 inline-block bg-green-700 text-white  font-semibold py-2 px-6 rounded-full hover:bg-green-700 transition">
+          className="mt-8 inline-block bg-green-700 text-white font-semibold py-2 px-6 rounded-full hover:bg-green-700 transition">
           View Projects
           </a>
         </div>
       </section>
+
+      <section>
+        <div>
+          <h1 className='flex flex-col items-center justify-center text-center text-2xl font-bold text-black'>Work Experiences</h1>
+          <Experience/>
+        </div>
+      </section>
+          
+      <section>
+          <SkillsTools/>
+          <Projects/>
+      </section>
+
+      <section className="bg-[#F2EEA7] py-16 px-8">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        <div className="flex-shrink-0">
+          <img
+            src={profile}
+            alt="Profile"
+            className="w-60 h-70 rounded-full"
+          />
+        </div>
+
+        <div className="text-center md:text-left max-w-3xl">
+          <h2 className="text-3xl font-bold text-black mb-4">About Me</h2>
+
+          <p className="text-2xl font-semibold text-orange-500 mb-6">
+            "An aspiring web developer determined to master my craft."
+          </p>
+
+          <p className="text-gray-800 leading-relaxed mb-4">
+            For years, I worked in networking and data centers, making sure systems ran smoothly
+            and securely. Along the way, I discovered a passion for solving problems with code and
+            creating tools that make life easier.
+          </p>
+
+          <p className="text-gray-800 leading-relaxed">
+            These days, I’m diving deep into <span className="font-semibold">web development</span>,
+            learning how to build modern, user-friendly websites and applications. My goal is to bring
+            together my technical background and new skills in coding to create digital experiences
+            that are both reliable and impactful.
+          </p>
+        </div>
+      </div>
+      </section>
+      <Footer />
     </div>
   )
 }
