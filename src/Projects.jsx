@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import career_coaching from './assets/career-coaching-website.PNG'
 import shoe_retail from './assets/all-of-us-are-smart-website.PNG'
-import to_do from './assets/to-do-app.PNG'
 import first_rubber from './assets/first-rubber.PNG'
+import Bean_Co from './assets/BeanCo.PNG'
 
 export default function Projects() {
   const projects = [
@@ -27,13 +27,13 @@ export default function Projects() {
     github: "https://github.com/kaungkhantnaynay/AllOfUsAreSmart",
     },
     {
-    title: "To-Do App",
+    title: "BeanCo Mini E-commerce",
     description:
-        "To-Do List Application is a simple yet effective productivity tool designed to help users organize tasks and manage daily activities. It allows users to add, edit, and delete tasks with an intuitive interface. The project emphasizes clean design, responsive layout, and smooth functionality, making it a practical example of front-end development and user interaction handling.",
-    image: to_do,
-    tools: ["React", "JavaScript", "Chart.js", "TailwindCSS", "Authentication", "API", "Firebase"],
-    link: "https://to-do-list-dcd1f.web.app/",
-    github: "https://github.com/kaungkhantnaynay/To-do-list",
+        "BeanCo is a self-developed e-commerce frontend project created to showcase my skills in building modern, responsive, and interactive web applications. The website represents a minimal but functional online coffee bean store where users can explore products, view details, and experience an organized shopping interface.",
+    image: Bean_Co,
+    tools: ["React", "JavaScript", "Next.js", "TypeScript", "CSS", "Tailwind", "Zustand"],
+    link: "https://beanco-mini-ecommerce.vercel.app/",
+    github: "https://github.com/kaungkhantnaynay/mini-e-commerce",
     },
     {
     title: "First Rubber (Cooperate Website)",
